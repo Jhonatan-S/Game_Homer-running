@@ -19,20 +19,42 @@ body{
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    background-color: rgb(0, 128, 255);
+    background-color: rgb(35, 172, 218);
     background-size: cover;
     border-radius: 5px;
+    border-bottom: 15px solid rgb(9, 161, 9);
 
 }
+
+.game-window > .clounds {
+    width: 15%;
+    position: absolute;
+    right: 0;
+}
+
+.game-window > .clound1 {
+    top: 20%;
+    animation: clound1 35s infinite linear
+}
+
+.game-window > .clound2 {
+    animation: clound2 50s infinite linear
+}
+
+
 .game-window > .passaro {
     width: 5%;
     position: absolute;
     right: 0;
-    /* animation: passaro 10s infinite linear */
 }
 
 .game-window > .passaro2{
     top: 40%;
+    animation: passaro2 25s infinite linear
+}
+
+.game-window > .passaro1 {
+    animation: passaro1 20s infinite linear
 }
 
 .game-window > h1 {
@@ -41,8 +63,10 @@ body{
     position: absolute;
     text-align: center;
     top: 20%;
-    font-size: 3rem;
+    font-size: 5rem;
+    text-shadow: 4px 2px #fff;
     visibility:hidden;
+    z-index: 99;
 }
 
 .game-window > .pipe{
@@ -52,7 +76,7 @@ body{
     animation: pipe-animation 2s infinite linear;
 }
 
-.game-window > .mario {
+.game-window > .homer {
     position: absolute;
     bottom: 0;
     height: 30%;
@@ -63,6 +87,22 @@ body{
     animation: jump 500ms ease-out;
 }
 
+.game-window > .box_score{ 
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.game-window > .box_score > #score {
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 2rem;
+    background-color: transparent;
+    width: 80px;
+    text-align: center;
+    border: none;
+}
 
 
 /* Criando keyframes do cano fazendo o slide. o right foi definido como -150px para que possa ir aprecendo devagar */
@@ -74,10 +114,20 @@ body{
         right: 100%;
     }
 }
-
-@keyframes passaro {
+/* Criando keyframe do pássaro1 */
+@keyframes passaro1 {
     from {
         right: -100%;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+/* Criando keyframe do pássaro2 com um tempo de aparecimento diferente do passaro1 */
+@keyframes passaro2 {
+    from {
+        right: -300%;
     }
     to {
         right: 100%;
@@ -106,4 +156,23 @@ body{
     }
 }
 
+/* Criando o keyframe da núvem de baixo*/
+@keyframes clound1 {
+    from {
+        right: -20%;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+/* Criando o keyframe da núvem de cima */
+@keyframes clound2 {
+    from {
+        right: -100%;
+    }
+    to {
+        right: 100%;
+    }
+}
 
