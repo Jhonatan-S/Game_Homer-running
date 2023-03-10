@@ -7,7 +7,7 @@ const audio = new Audio('audio/Sky high (Craig Ballie - Morning Rise).mp3');
 
 //############
 
-// Guardando o elemento pipe, mario e score
+// Guardando o elemento pipe, homer e score
 const pipe = document.querySelector('.pipe');
 const homer = document.querySelector('.homer');
 const score = document.querySelector('#score');
@@ -31,7 +31,7 @@ function jump() {
     setTimeout( () => {
         document.querySelector('.homer').classList.remove('jump')
 
-        if (positionPipe <= 80 && marioPosition == 0){
+        if (positionPipe <= 80 && homerPosition == 0){
             const score_calc = parseInt(score.value + 1);
             score.value = score_calc
         }
@@ -46,7 +46,7 @@ const loop = setInterval( () => {
     const positionPipe = pipe.offsetLeft;
     const homerPosition = window.getComputedStyle(homer).bottom.replace('px', '');
 
-    // Criando condição. Se o mario bater no pipe (feito através de localização) troca a imagem do Mário e para o loop
+    // Criando condição. Se o homer bater no pipe (feito através de localização) troca a imagem do homer e para o loop
 
     if (positionPipe <= 80  && positionPipe > 0 && homerPosition < 70) {
         
@@ -62,7 +62,7 @@ const loop = setInterval( () => {
 
         game_over.style.visibility = 'visible'
 
-        clearInterval(loop) // Parando o loop após o mario bater no pipe
+        clearInterval(loop) // Parando o loop após o homer bater no pipe
     }
 
 }, 10); // 10 mili segundos
