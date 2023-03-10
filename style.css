@@ -57,7 +57,18 @@ body{
     animation: passaro1 20s infinite linear
 }
 
-.game-window > h1 {
+.game-window > .title {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    top: 20%;
+    font-size: 4rem;
+    text-shadow: 4px 2px #fff;
+    z-index: 99;
+}
+
+.game-window > .game_over {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -69,17 +80,36 @@ body{
     z-index: 99;
 }
 
+.game-window > h2 {
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+    font-size: 2rem;
+    top: 50%;
+    text-align: center;
+    position: absolute;
+}
+
 .game-window > .pipe{
     height: 15%;
     position: absolute;
     bottom: 0;
-    animation: pipe-animation 2s infinite linear;
+    animation: pipe-animation 3s infinite linear;
+    animation-duration: 3s;
+    transition: 5s;
 }
 
-.game-window > .homer {
+.game-window > .running {
     position: absolute;
     bottom: 0;
     height: 30%;
+    
+}
+
+.game-window > .dormindo {
+    position: absolute;
+    bottom: -50px;
+    height: 20%;
     z-index: 99;
 }
 
@@ -99,12 +129,49 @@ body{
     font-weight: 700;
     font-size: 2rem;
     background-color: transparent;
-    width: 80px;
     text-align: center;
     border: none;
 }
 
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
 
+section > .start {
+    padding: 10px 30px;
+    font-weight: 700px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 0 1px #0b0b0b;
+    cursor: pointer;
+}
+
+section > .start:active {
+    box-shadow: 0 0 0 0 0 #0b0b0b, inset 3px 3px #0b0b0b;
+    transform: translate(3px, 3px);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+footer > p {
+    color: #fff;
+}
+
+footer > p > a {
+    color: #2cef00;
+    text-decoration: none;
+}
+
+footer > p > a:hover {
+    text-decoration: underline;
+}
 /* Criando keyframes do cano fazendo o slide. o right foi definido como -150px para que possa ir aprecendo devagar */
 @keyframes pipe-animation {
     from {
@@ -175,4 +242,6 @@ body{
         right: 100%;
     }
 }
+
+
 

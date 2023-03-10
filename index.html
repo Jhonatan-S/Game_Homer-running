@@ -13,7 +13,9 @@
 <body>
     <main class="game-window">
 
-        <h1>Game Over</h1>
+        <h1 class="title">Sr. Homer no mundo do Mário</h1>
+        <h1 class="game_over">Game Over</h1>
+        <h2>SCORE: </h2>
 
         <img src="Image/clounds/clound1.png" alt="clound" class="clounds clound1">
 
@@ -23,7 +25,7 @@
 
         <img src="Image/birds/Passaro2.gif" alt="passaro voando" class="passaro passaro2">
 
-        <img src="Image/running/running.gif" alt="Homer runing" class="homer">
+        <img src="Image/homer/dormindo.gif" alt="Homer runing" class="dormindo">
 
         <img src="Image/pipe/pipe.webp" alt="" class="pipe">
 
@@ -31,11 +33,25 @@
 
         <audio src="audio/lose.mp3" class="audio-lose"></audio>
 
+        <audio src="audio/Iniciando.mp3" class="inciando_corrida"></audio>
+
+
+
         <div class="box_score">
-          <input type="text" value="0" id="score" readonly>
+          <p id="score">SCORE: 0</p>
         </div>
        
     </main>
+
+    <section>
+        
+        <button class="start" onclick="start()">Start</button>
+      
+    </section>
+
+    <footer>
+        <p>Esse jogo foi feito por <a href="https://github.com/Jhonatan-S">Jhonatan Santana</a></p>
+    </footer>
 
     <script src="app.js"></script>
 </body>
