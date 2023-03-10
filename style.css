@@ -19,11 +19,20 @@ body{
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    background: url(Image/sky.jpg);
-    background-repeat: no-repeat;
+    background-color: rgb(0, 128, 255);
     background-size: cover;
     border-radius: 5px;
 
+}
+.game-window > .passaro {
+    width: 5%;
+    position: absolute;
+    right: 0;
+    /* animation: passaro 10s infinite linear */
+}
+
+.game-window > .passaro2{
+    top: 40%;
 }
 
 .game-window > h1 {
@@ -56,7 +65,7 @@ body{
 
 
 
-
+/* Criando keyframes do cano fazendo o slide. o right foi definido como -150px para que possa ir aprecendo devagar */
 @keyframes pipe-animation {
     from {
         right: -150px;
@@ -65,6 +74,17 @@ body{
         right: 100%;
     }
 }
+
+@keyframes passaro {
+    from {
+        right: -100%;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+/* Criando o keyframe para o mario pular */
 
 @keyframes jump {
     0% {
