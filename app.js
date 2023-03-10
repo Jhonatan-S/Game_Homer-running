@@ -6,16 +6,12 @@ function start() {
     document.querySelector('.homer').setAttribute('src', 'Image/homer/running.gif')
     document.querySelector('.running').classList.remove('dormindo')
 
-
     document.querySelector('.title').style.fontSize = '1rem'
     document.querySelector('.title').style.textAlign = 'left'
     document.querySelector('.title').style.top = '0'
     document.querySelector('.title').style.textShadow = '1px 1px #fff'
 
-
     score_count()
-
-
 }
 
 // Guardando o elemento pipe, homer e score
@@ -38,9 +34,11 @@ document.addEventListener('keydown', (e) =>{
     
     if (e.key === 'ArrowDown'){
 
-        document.querySelector('.running').setAttribute('src', 'Image/homer/abaixado.gif')
-        document.querySelector('.running').classList.add('abaixado')
-        document.querySelector('.abaixado').classList.remove('running')
+        if (game_over.style.visibility == false) {
+            document.querySelector('.running').setAttribute('src', 'Image/homer/abaixado.gif')
+            document.querySelector('.running').classList.add('abaixado')
+            document.querySelector('.abaixado').classList.remove('running')
+        }
     }
 })
 
@@ -48,9 +46,12 @@ document.addEventListener('keyup', (event) => {
 
     if (event.key === 'ArrowDown') {
 
-        document.querySelector('.abaixado').setAttribute('src', 'Image/homer/running.gif')
-        document.querySelector('.abaixado').classList.add('running')
-        document.querySelector('.running').classList.remove('abaixado')
+        if (game_over.style.visibility == false) {
+
+            document.querySelector('.abaixado').setAttribute('src', 'Image/homer/running.gif')
+            document.querySelector('.abaixado').classList.add('running')
+            document.querySelector('.running').classList.remove('abaixado')
+        }
 
     }
 })
@@ -76,8 +77,6 @@ function jump() {
 function score_count() {
     setInterval( () => {
         
-        
-
         // Criando condição. Se o homer bater no pipe (feito através de localização) troca a imagem do homer e para o loop
     
         if (game_over.style.visibility) {
@@ -113,6 +112,7 @@ const loop = setInterval( () => {
         const homer_death = 'Image/homer/lose.gif'
 
         homer.setAttribute('src', homer_death)
+        homer.style.height = '40%'
 
         game_over.style.visibility = 'visible'
 

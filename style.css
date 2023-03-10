@@ -121,6 +121,13 @@ body{
     z-index: 99;
 }
 
+.game-window > .perdeu {
+    position: absolute;
+    bottom: 0;
+    height: 40%;
+}
+
+
 .jump {
     animation: jump 500ms ease-out;
 }
