@@ -1,4 +1,4 @@
-document.addEventListener('keydown', jump); // Quando qualquer tecla for digitada a função jump será chamada
+; // Quando qualquer tecla for digitada a função jump será chamada
 
 function start() {
     document.querySelector('.dormindo').classList.add('running')
@@ -25,7 +25,36 @@ const audio_jump = document.querySelector('.audio-jump');
 const audio_lose = document.querySelector('.audio-lose');
 const game_over = document.querySelector('.game_over');
 let count = 0;
-let time_score = 250;
+let time_score = 250;   
+
+
+document.addEventListener('keydown', (e) =>{
+    if (e.key === 'ArrowUp') {
+        jump()
+    }
+})
+
+document.addEventListener('keydown', (e) =>{
+    
+    if (e.key === 'ArrowDown'){
+
+        document.querySelector('.running').setAttribute('src', 'Image/homer/abaixado.gif')
+        document.querySelector('.running').classList.add('abaixado')
+        document.querySelector('.abaixado').classList.remove('running')
+    }
+})
+
+document.addEventListener('keyup', (event) => {
+
+    if (event.key === 'ArrowDown') {
+
+        document.querySelector('.abaixado').setAttribute('src', 'Image/homer/running.gif')
+        document.querySelector('.abaixado').classList.add('running')
+        document.querySelector('.running').classList.remove('abaixado')
+
+    }
+})
+
 
 function jump() {
 
@@ -46,7 +75,8 @@ function jump() {
 
 function score_count() {
     setInterval( () => {
-    
+        
+        
 
         // Criando condição. Se o homer bater no pipe (feito através de localização) troca a imagem do homer e para o loop
     
