@@ -1,4 +1,3 @@
-
 document.addEventListener('keydown', jump); // Quando qualquer tecla for digitada a função jump será chamada
 
 function start() {
