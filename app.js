@@ -12,6 +12,7 @@ const pipe = document.querySelector('.pipe');
 const homer = document.querySelector('.homer');
 const score = document.querySelector('#score');
 const audio_jump = document.querySelector('.audio-jump')
+const audio_lose = document.querySelector('.audio-lose')
 const game_over = document.querySelector('h1')
 
 
@@ -49,6 +50,8 @@ const loop = setInterval( () => {
     // Criando condição. Se o homer bater no pipe (feito através de localização) troca a imagem do homer e para o loop
 
     if (positionPipe <= 80  && positionPipe > 0 && homerPosition < 70) {
+
+        audio_lose.play()
         
         pipe.style.animation = 'none';
         pipe.style.left = positionPipe + 'px';
