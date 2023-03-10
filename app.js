@@ -3,8 +3,9 @@ document.addEventListener('keydown', jump); // Quando qualquer tecla for digitad
 function start() {
     document.querySelector('.dormindo').classList.add('running')
     document.querySelector('.running').classList.add('homer')
-    document.querySelector('.running').classList.remove('dormindo')
     document.querySelector('.homer').setAttribute('src', 'Image/homer/running.gif')
+    document.querySelector('.running').classList.remove('dormindo')
+
 
     document.querySelector('.title').style.fontSize = '1rem'
     document.querySelector('.title').style.textAlign = 'left'
