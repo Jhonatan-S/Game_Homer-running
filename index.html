@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,44 +11,49 @@
     <link rel="shortcut icon" href="Image/favicon/homer_icon.ico" type="image/x-icon">
     <title>Homer no mundo do Mário</title>
 </head>
+
 <body>
     <main class="game-window">
 
         <h1 class="title">Sr. Homer no mundo do Mário</h1>
         <h1 class="game_over">Game Over</h1>
         <h2>SCORE: </h2>
+        <h3 class="press_start">Press start</h3>
+        <h3 class="aumentar_velocidade">Parabéns!!! Vamos aumentar a velocidade...</h3>
 
-        <img src="Image/clounds/clound1.png" alt="clound" class="clounds clound1">
+        <div class="sky">
+            <img src="Image/clounds/clound1.png" alt="clound" class="clounds clound1">
+            <img src="Image/clounds/clound2.png" alt="clound" class="clounds clound2">
+            <img src="Image/birds/passaro1.gif" alt="passaro voando" class="passaro passaro1">
+            <img src="Image/birds/Passaro2.gif" alt="passaro voando" class="passaro passaro2">
+        </div>
 
-        <img src="Image/clounds/clound2.png" alt="clound" class="clounds clound2">
-
-        <img src="Image/birds/passaro1.gif" alt="passaro voando" class="passaro passaro1">
-
-        <img src="Image/birds/Passaro2.gif" alt="passaro voando" class="passaro passaro2">
-
-        <img src="Image/homer/dormindo.gif" alt="Homer runing" class="dormindo">
-
-        <img src="Image/pipe/pipe.webp" alt="" class="pipe">
+        <div class="bottom">
+            <img src="Image/homer/dormindo.gif" alt="Homer runing" class="dormindo">
+            <img src="Image/pipe/pipe.webp" alt="" class="pipe">
+        </div>
 
         <audio src="audio/jump.mp3" class="audio-jump"></audio>
 
         <audio src="audio/lose.mp3" class="audio-lose"></audio>
 
-        <audio src="audio/Iniciando.mp3" class="inciando_corrida"></audio>
-
-
+        <audio src="audio/impacto de bomba.mp3" class="bomba_marioAplaudindo"></audio>
 
         <div class="box_score">
           <p id="score">SCORE: 0</p>
         </div>
-       
+
+        <div class="mario_appear">
+            <img src="Image/fumaça.gif" alt="fumaça" class="fumaca">
+            <img src="Image/Mario aplaudindo.gif" alt="Mario aplaudindo" class="mario_aplaudindo">
+        </div>
     </main>
 
-    <section>
+    <div class="button_div">
         
         <button class="start" onclick="start()">Start</button>
       
-    </section>
+    </div>
 
     <footer>
         <p>Esse jogo está sendo desenvolvido por <a href="https://github.com/Jhonatan-S">Jhonatan Santana</a></p>
