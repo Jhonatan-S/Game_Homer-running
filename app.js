@@ -138,14 +138,14 @@ const loop = setInterval( () => {
         clearInterval(loop) // Parando o loop após o homer bater no pipe
 
     }
-    else if (count_score == 10) { 
+    else if (count_score == 100) { 
 
         pipe.style.animationDuration = '2s'
         pipe.style.visibility = 'hidden'
         pipe.style.animationName = 'none'
         mario()
         
-    }else if (count_score == 100) {
+    }else if (count_score == 200) {
         
         pipe.style.animationDuration = '1.5s'
         pipe.style.visibility = 'hidden'
@@ -153,7 +153,7 @@ const loop = setInterval( () => {
         mario()
              
         
-    }else if (count_score == 200) {
+    }else if (count_score == 300) {
     
         pipe.style.animationDuration = '1s'
         pipe.style.visibility = 'hidden'
