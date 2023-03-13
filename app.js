@@ -27,7 +27,7 @@ function escrever(elemento){
 const titulo = document.querySelector('.title');
 escrever(titulo);
 
-function start() {
+function startGame() {
     document.querySelector('.dormindo').classList.add('running')
     document.querySelector('.running').classList.add('homer')
     document.querySelector('.homer').setAttribute('src', 'Image/homer/running.gif')
@@ -38,6 +38,13 @@ function start() {
     document.querySelector('.press_start').style.visibility = 'hidden'
     score_count()
 }
+
+addEventListener('keydown', (e) => {
+    if (e.key === ' ') {
+      startGame();
+    }
+  });
+
 
 // Se a tecla seleciona for seta pra cima a função jump será chamada
 
@@ -138,7 +145,7 @@ const loop = setInterval( () => {
         clearInterval(loop) // Parando o loop após o homer bater no pipe
 
     }
-    else if (count_score == 100) { 
+    else if (count_score == 10) { 
 
         pipe.style.animationDuration = '2s'
         pipe.style.visibility = 'hidden'
@@ -166,28 +173,27 @@ const loop = setInterval( () => {
 
 
 function mario() {
+    
+    aumentar_velocidade.style.visibility = 'visible'
+    mario_aplaudindo.style.visibility = 'visible'
+    fumaca.style.visibility = 'visible'
 
-    setTimeout ( () => {
-        aumentar_velocidade.style.visibility = 'visible'
-        mario_aplaudindo.style.visibility = 'visible'
-        audio_bomba.play()
-        fumaca.style.visibility = 'visible'
-    },500)
+    audio_bomba.play()
 
-    let contador = 5
     let opacidade = 1.5
 
-    while(contador > 0){
-
-            if (contador > 0) {
+    const loop_fumaca = setInterval ( () => {
         
-                fumaca.style.opacity = opacidade
-                audio_bomba.pause()
-                contador --
-                opacidade -= 0.3
-            }
+        if (opacidade > 0) {
+        
+            fumaca.style.opacity = opacidade
+            opacidade -= 0.3
+
+        }else {
+            clearInterval(loop_fumaca)
         }
-                
+    },300)
+              
     setTimeout( () => {   
 
             aumentar_velocidade.style.visibility = 'hidden'
@@ -195,6 +201,6 @@ function mario() {
             mario_aplaudindo.style.visibility = 'hidden'
             pipe.style.visibility = 'visible'
             pipe.style.animationName = 'pipe-animation'
-            contador = 1.5
+            opacidade = 1.5
     }, 5000)
 }

@@ -26,11 +26,6 @@ body{
     display: flex;
     justify-content: center;
 }
-.game-window > .sky { 
-    position: absolute;
-    width: 100%;
-}
-
 .game-window > .sky .clounds {
     width: 15%;
     position: absolute;
@@ -46,23 +41,35 @@ body{
     animation: clound2 50s infinite linear
 }
 
-
 .game-window > .sky .passaro {
     width: 5%;
     position: absolute;
-    right: 0;
 }
 
 .game-window > .sky .passaro2{
     top: 40%;
-    animation: passaro2 25s infinite linear
+    animation: passaro2 10s infinite linear
 }
 
 .game-window > .sky .passaro1 {
-    animation: passaro1 20s infinite linear
+    animation: passaro1 15s infinite linear
 }
 
-.game-window > .title {
+.game-window > .sky .fantasma {
+    top: 50%;
+    height: 30%;
+    position: absolute;
+    visibility: hidden;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.game-window .container_titles {
+    width: 100%;
+}
+
+.game-window > .container_titles .title {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -70,10 +77,11 @@ body{
     top: 20%;
     font-size: 4rem;
     text-shadow: 4px 2px #fff;
+    z-index: 99;
 
 }
 
-.game-window > .press_start {
+.game-window > .container_titles .press_start {
     visibility: visible;
     height: 100%;
     width: 100%;    
@@ -84,9 +92,10 @@ body{
     color: #ef0000;
     text-shadow: 2px 2px #fff;
     animation: press_start 0.8s infinite linear;
+    z-index: 99;
 }
 
-.game-window > .aumentar_velocidade {
+.game-window > .container_titles .aumentar_velocidade {
     visibility: hidden;
     height: 100%;
     width: 100%;    
@@ -97,8 +106,9 @@ body{
     color: #eae3d3;
     text-shadow: 2px 2px #373131;
     animation: aumentar_velocidade 0.8s infinite ease-out;
+    z-index: 99;
 }
-.game-window > .game_over {
+.game-window > .container_titles .game_over {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -110,7 +120,7 @@ body{
     z-index: 99;
 }
 
-.game-window > h2 {
+.game-window > .container_titles .text_score {
     height: 100%;
     width: 100%;
     visibility: hidden;
@@ -118,6 +128,7 @@ body{
     top: 50%;
     text-align: center;
     position: absolute;
+    z-index: 99;
 }
 
 .game-window > .bottom .pipe{
@@ -207,26 +218,42 @@ body{
     border: none;
 }
 
-.button_div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
 
-.button_div > .start {
+.itens_interativos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 80px;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 0 20px ;
+
+}
+.itens_interativos > .button_div > .restart_button {
     padding: 10px 30px;
     font-weight: 700px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     border-radius: 10px;
     box-shadow: 2px 2px 0 1px #0b0b0b;
     cursor: pointer;
 }
 
-.button_div > .start:active {
+.itens_interativos > .button_div > .restart_button span {
+    font-size: 12px;
+    color: #ef0000;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.itens_interativos > .button_div > .restart_button:active {
     box-shadow: 0 0 0 0 0 #0b0b0b, inset 3px 3px #0b0b0b;
     transform: translate(3px, 3px);
 }
+
+
 
 footer {
     display: flex;
@@ -268,7 +295,7 @@ footer > p > a:hover {
 /* Criando keyframe do pássaro2 com um tempo de aparecimento diferente do passaro1 */
 @keyframes passaro2 {
     from {
-        right: -300%;
+        right: -150px;
     }
     to {
         right: 100%;
@@ -319,42 +346,18 @@ footer > p > a:hover {
 
 @keyframes press_start {
     0% {
-        scale: 1;
-    }
-    25% {
-        scale: 1.05;
-    }
-    50% {
-        scale: 1.1;
-    }
-    50% {
-        scale: 1.15;
-    }
-    75% {
-        scale: 1.175;
+        transform: translateY(50px);
     }
     100% {
-        scale: 1.2;
+        transform: translateY(0);
     }
 }
 
 @keyframes aumentar_velocidade {
     0% {
-        scale: 1;
-    }
-    25% {
-        scale: 1.02;
-    }
-    50% {
-        scale: 1.04;
-    }
-    50% {
-        scale: 1.06;
-    }
-    75% {
-        scale: 1.08;
+        transform: translateY(50px);
     }
     100% {
-        scale: 1.1;
+        transform: translateY(0);
     }
 }
