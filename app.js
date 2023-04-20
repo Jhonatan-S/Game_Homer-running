@@ -5,7 +5,7 @@ const score = document.querySelector('#score'); // O contador de pontos
 const audio_jump = document.querySelector('.audio-jump'); // Som quando o homer pula
 const audio_lose = document.querySelector('.audio-lose'); // Som quando o homer bate no cano
 const game_over = document.querySelector('.game_over'); // O texto game over
-const mario_aplaudindo = document.querySelector('.mario_aplaudindo')
+const mario_aplaudindo = document.querySelector('.mario_aplaudindo')    
 const fumaca = document.querySelector('.fumaca')
 const audio_bomba = document.querySelector('.bomba_marioAplaudindo')
 const aumentar_velocidade = document.querySelector('.aumentar_velocidade')
@@ -145,7 +145,7 @@ const loop = setInterval( () => {
         clearInterval(loop) // Parando o loop após o homer bater no pipe
 
     }
-    else if (count_score == 10) { 
+    else if (count_score == 100) { 
 
         pipe.style.animationDuration = '2s'
         pipe.style.visibility = 'hidden'

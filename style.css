@@ -177,15 +177,20 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
 }
 
 
 .game-window > .mario_appear > .mario_aplaudindo {
     visibility: hidden;
     position: absolute;
+    left: 50%;
     bottom: -8px;
     height: 30%;
+    transform: translateX(-50%);
 }
 
 .game-window > .mario_appear .fumaca {
