@@ -16,7 +16,9 @@ const btnStart = document.querySelector('#btn-start')
 const jump = document.querySelector('#jump')
 const down = document.querySelector('#down')
 
-
+function recarregarPagina() {
+    location.reload();
+  }
 
 
 function escrever(elemento){
@@ -82,7 +84,14 @@ jump.addEventListener('click', ()=> {
         audio_jump.play()
         document.querySelector('.running').classList.add('jump');
     }
+
+    setTimeout( () => {
+        document.querySelector('.running').classList.remove('jump')
+
+    } , 510);
 })
+
+
 
 // Se a tecla pressionada for seta pra baixo o homer vai embaixar 
 document.addEventListener('keydown', (e) =>{
