@@ -12,6 +12,12 @@ const aumentar_velocidade = document.querySelector('.aumentar_velocidade')
 let count_score = 0; // score
 let time_score = 250; // Determinar o tempo em ms do contador de ponto
 
+const btnStart = document.querySelector('#btn-start')
+const jump = document.querySelector('#jump')
+const down = document.querySelector('#down')
+
+
+
 
 function escrever(elemento){
     const textoArray = elemento.innerHTML.split('');
@@ -45,6 +51,7 @@ addEventListener('keydown', (e) => {
     }
   });
 
+btnStart.addEventListener('click', startGame)
 
 // Se a tecla seleciona for seta pra cima a função jump será chamada
 
@@ -64,6 +71,16 @@ document.addEventListener('keydown', (e) =>{
             document.querySelector('.running').classList.remove('jump')
     
         } , 510);
+    }
+})
+
+jump.addEventListener('click', ()=> {
+    if (game_over.style.visibility) {
+        audio_jump.pause()
+
+    }else{
+        audio_jump.play()
+        document.querySelector('.running').classList.add('jump');
     }
 })
 
@@ -94,6 +111,22 @@ document.addEventListener('keyup', (event) => {
             document.querySelector('.running').classList.remove('abaixado')
         }
 
+    }
+})
+
+down.addEventListener('touchstart', ()=> {
+    if (game_over.style.visibility == false) {
+        document.querySelector('.running').setAttribute('src', 'Image/homer/abaixado.gif')
+        document.querySelector('.running').classList.add('abaixado')
+        document.querySelector('.abaixado').classList.remove('running')
+    }
+})
+
+down.addEventListener('touchend', ()=> {
+    if (game_over.style.visibility == false) {
+        document.querySelector('.abaixado').setAttribute('src', 'Image/homer/running.gif')
+        document.querySelector('.abaixado').classList.add('running')
+        document.querySelector('.running').classList.remove('abaixado')
     }
 })
 
