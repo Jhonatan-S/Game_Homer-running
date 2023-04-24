@@ -305,6 +305,7 @@ footer > p > a:hover {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-size: 1.2rem;
+    user-select: none;
 }
 
 .btn-cel:target {
